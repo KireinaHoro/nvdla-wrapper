@@ -41,7 +41,7 @@ INC_DIRS = $(sort $(dir $(call lookup_srcs,$(VLOG_DIR)/vmod,vh)))
 # pre-process using custom script to replace the includes (but leave rest unaffected)
 #########################################################################################
 
-PREPROC_SCRIPT = $(nvdla_blocks_dir)/../../../../../scripts/insert-includes.py
+PREPROC_SCRIPT = $(nvdla_blocks_dir)/../../../scripts/insert-includes.py
 
 $(PREPROC_VERILOG): $(ALL_VSRCS)
 	mkdir -p $(dir $(PREPROC_VERILOG))

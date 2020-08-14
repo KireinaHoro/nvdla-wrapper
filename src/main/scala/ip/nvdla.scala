@@ -93,7 +93,7 @@ class nvdla(configName: String, blackboxName: String, hasSecondAXI: Boolean, dat
     val pready = Output(Bool())
   })
 
-  val makeStr = s"make -C generators/nvdla/src/main/resources default NVDLA_TYPE=${configName}"
+  val makeStr = s"make -C nvdla/src/main/resources default NVDLA_TYPE=${configName}"
   val preproc = if (synthRAMs) makeStr + " NVDLA_RAMS=synth" else makeStr
   require (preproc.! == 0, "Failed to run pre-processing step")
 
